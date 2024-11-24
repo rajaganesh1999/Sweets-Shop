@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweets - Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="/placeholder.svg" alt="Pickle Jar Logo" width="40" height="40" class="d-inline-block align-top">
+        Pickle Jar
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html">SHOP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="admin.html">ADMIN</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5 pt-5">
+    <div id="loginForm" class="mb-5">
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+
+    <div id="adminPanel" style="display: none;">
+      <h1 class="mb-4">Admin Dashboard</h1>
+      <button id="logoutBtn" class="btn btn-secondary mb-3">Logout</button>
+      
+      <h2 class="mb-3">Change Credentials</h2>
+      <form id="changeCredentialsForm" class="mb-5">
+        <div class="mb-3">
+          <label for="newUsername" class="form-label">New Username</label>
+          <input type="text" class="form-control" id="newUsername" required>
+        </div>
+        <div class="mb-3">
+          <label for="newPassword" class="form-label">New Password</label>
+          <input type="password" class="form-control" id="newPassword" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Change Credentials</button>
+      </form>
+
+      <h2 class="mb-3">Add New Product</h2>
+      <form id="productForm" class="mb-5">
+        <div class="mb-3">
+          <label for="productName" class="form-label">Product Name</label>
+          <input type="text" class="form-control" id="productName" name="productName" required>
+        </div>
+        <div class="mb-3">
+          <label for="productPrice" class="form-label">Price</label>
+          <input type="number" class="form-control" id="productPrice" name="productPrice" required>
+        </div>
+        <div class="mb-3">
+          <label for="productCategory" class="form-label">Category</label>
+          <select class="form-select" id="productCategory" name="productCategory" required>
+            <option value="non-veg">SmartSweets candy</option>
+            <option value="veg">sweets</option>
+            <option value="powders">Chocolates</option>
+            <option value="fryums">Mix Sweets</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="productImage" class="form-label">Image (300x300 pixels)</label>
+          <input type="file" class="form-control" id="productImage" name="productImage" accept="image/*" required>
+          <small class="form-text text-muted">Please upload an image with dimensions 300x300 pixels.</small>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="isLive" name="isLive">
+          <label class="form-check-label" for="isLive">Live Product</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+
+      <h2 class="mb-3">Current Products</h2>
+      <table id="productTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Live</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Product rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+
+      <h2 class="mb-3 mt-5">Manage Hero Carousel Items</h2>
+      <form id="carouselItemForm" class="mb-5">
+        <div class="mb-3">
+          <label for="carouselItemTitle" class="form-label">Title</label>
+          <input type="text" class="form-control" id="carouselItemTitle" name="carouselItemTitle" required>
+        </div>
+        <div class="mb-3">
+          <label for="carouselItemImage" class="form-label">Image (1000x500 pixels)</label>
+          <input type="file" class="form-control" id="carouselItemImage" name="carouselItemImage" accept="image/*" required>
+          <small class="form-text text-muted">Please upload an image with dimensions 1000x500 pixels.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Carousel Item</button>
+      </form>
+      
+      <!-- <table id="carouselItemTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          Carousel item rows will be dynamically inserted here 
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <h2 class="mb-3 mt-5">Manage "The Real Taste of" Images</h2>
+<form id="realTasteForm" class="mb-5">
+  <div class="mb-3">
+    <label for="realTasteTitle" class="form-label">Title</label>
+    <input type="text" class="form-control" id="realTasteTitle" name="realTasteTitle" required>
+  </div>
+  <div class="mb-3">
+    <label for="realTasteSubtitle" class="form-label">Subtitle</label>
+    <input type="text" class="form-control" id="realTasteSubtitle" name="realTasteSubtitle" required>
+  </div>
+  <div class="mb-3">
+    <label for="realTasteImage" class="form-label">Image (300x300 pixels)</label>
+    <input type="file" class="form-control" id="realTasteImage" name="realTasteImage" accept="image/*" required>
+    <small class="form-text text-muted">Please upload an image with dimensions 300x300 pixels.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Add "The Real Taste of" Image</button>
+</form> -->
+
+<table id="realTasteTable" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- "The Real Taste of" image rows will be dynamically inserted here -->
+  </tbody>
+</table>
+
+  <footer class="bg-light mt-5">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: info@picklejars.in</p>
+          <p>Phone: +919346194519</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center py-3">
+      <p class="mb-0">&copy; 2024 Pickle Jar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Existing code...
+
+// Add this to the top of the file with other data declarations
+let realTasteItems = JSON.parse(localStorage.getItem('realTasteItems')) || [
+  { id: 1, title: 'The Real Taste of', subtitle: 'Mango Pickle', image: '/placeholder.svg?height=300&width=300' },
+  { id: 2, title: 'The Real Taste of', subtitle: 'Tomato Pickle', image: '/placeholder.svg?height=300&width=300' },
+  { id: 3, title: 'The Real Taste of', subtitle: 'Chicken Pickle', image: '/placeholder.svg?height=300&width=300' },
+];
+
+// Add these functions to manage "The Real Taste of" items
+function addRealTasteItem(newItem) {
+  realTasteItems.push(newItem);
+  saveRealTasteItems();
+  renderRealTasteItemTable();
+  renderRealTasteSection();
+}
+
+function deleteRealTasteItem(id) {
+  realTasteItems = realTasteItems.filter(item => item.id !== id);
+  saveRealTasteItems();
+  renderRealTasteItemTable();
+  renderRealTasteSection();
+}
+
+function saveRealTasteItems() {
+  localStorage.setItem('realTasteItems', JSON.stringify(realTasteItems));
+}
+
+function initializeRealTasteSection() {
+  const realTasteForm = document.getElementById('realTasteForm');
+  const realTasteTable = document.getElementById('realTasteTable');
+
+  if (realTasteForm && realTasteTable) {
+    realTasteForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(realTasteForm);
+      const file = formData.get('realTasteImage');
+      
+      // Image size validation
+      const img = new Image();
+      img.onload = function() {
+        if (this.width !== 300 || this.height !== 300) {
+          alert('Please upload an image with dimensions 300x300 pixels.');
+          return;
+        }
+        
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const newItem = {
+            id: Date.now(),
+            title: formData.get('realTasteTitle'),
+            subtitle: formData.get('realTasteSubtitle'),
+            image: event.target.result
+          };
+          addRealTasteItem(newItem);
+          realTasteForm.reset();
+        };
+        reader.readAsDataURL(file);
+      };
+      img.src = URL.createObjectURL(file);
+    });
+
+    renderRealTasteItemTable();
+  }
+}
+
+function renderRealTasteItemTable() {
+  const realTasteTable = document.getElementById('realTasteTable');
+  if (realTasteTable) {
+    const tbody = realTasteTable.querySelector('tbody');
+    tbody.innerHTML = '';
+    realTasteItems.forEach(item => {
+      const row = tbody.insertRow();
+      row.innerHTML = `
+        <td><img src="${item.image}" alt="${item.subtitle}" width="100" height="100"></td>
+        <td>${item.title}</td>
+        <td>${item.subtitle}</td>
+        <td>
+          <button class="btn btn-sm btn-danger" onclick="deleteRealTasteItem(${item.id})">Delete</button>
+        </td>
+      `;
+    });
+  }
+}
+
+// Add this function to render "The Real Taste of" section on the main page
+function renderRealTasteSection() {
+  const realTasteContainer = document.querySelector('.real-taste-section .row');
+  if (realTasteContainer) {
+    realTasteContainer.innerHTML = '';
+    realTasteItems.forEach(item => {
+      const itemHtml = `
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="${item.image}" class="card-img-top" alt="${item.subtitle}">
+            <div class="card-body text-center">
+              <h5 class="card-title">${item.title}</h5>
+              <h3 class="card-subtitle mb-2 text-primary">${item.subtitle}</h3>
+            </div>
+          </div>
+        </div>
+      `;
+      realTasteContainer.innerHTML += itemHtml;
+    });
+  }
+}
+
+// Modify the existing admin login function
+if (adminLoginForm) {
+  adminLoginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    if (username === adminCredentials.username && password === adminCredentials.password) {
+      loginForm.style.display = 'none';
+      adminPanel.style.display = 'block';
+      initializeRealTasteSection(); // Initialize the Real Taste section after successful login
+    } else {
+      alert('Invalid credentials');
+    }
+  });
+}
+
+// Update the page initialization
+document.addEventListener('DOMContentLoaded', function() {
+  // ... (keep existing initialization code)
+  
+  // Add this line to render the Real Taste section on the main page
+  if (document.querySelector('.real-taste-section')) {
+    renderRealTasteSection();
+  }
+});
+
+
+  </script>
+</body>
+</html>

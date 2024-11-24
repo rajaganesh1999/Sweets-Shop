@@ -1,0 +1,161 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in dimensions */
+  }
+  
+  /* Root Variables */
+  :root {
+    --primary-color: #dbc81d;
+    --secondary-color: #0055ff;
+    --accent-color: #fffb00;
+    --text-color: #000000;
+    --background-color: #fafaf8;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding-top: 55px;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: var(--primary-color) !important;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    color: white !important;
+  }
+  
+  .navbar-light .navbar-brand {
+    color: var(--secondary-color) !important;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  .hero img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Product Cards */
+  .product-card {
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid var(--accent-color);
+    background-color: white;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* 3-Card Section */
+  .card2 {
+    color: #000;
+    background-color: #f3e143;
+    margin: 0 auto; /* Centering */
+    padding: 1pxpx;
+  }
+  
+  .container1 {
+    margin: 0 auto;
+    padding: 4px;
+    max-width: 12000px; /* Prevents extra width issues */
+  }
+  
+  /* Footer */
+  footer {
+    background-color: rgb(14, 15, 17) !important; /* Ensure dark background */
+    color: #ffffff !important; /* White text for contrast */
+    padding: 20px; /* Add padding for better visibility */
+    text-align: center; /* Center-align content */
+  }
+  
+  footer a {
+    color: var(--secondary-color) !important; /* Use secondary color for links */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  footer a:hover {
+    color: var(--accent-color) !important; /* Change color on hover */
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+  .features{
+    padding-top: 25px;
+  }
+
+    .cards3 {
+        background-color: #f3e143; /* Background for the section */
+        
+      }
+      
+      .card {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .card-img-top {
+        width: 100%; /* Ensures the image occupies full width */
+        height: 250px; /* Adjust to desired height */
+        object-fit: cover; /* Ensures the image scales properly */
+        border-radius: 10px; /* Adds smooth rounded corners */
+      }
+      
+      .card-body h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      
+      .marquee {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+      }
+      
+      .marquee-text {
+        display: inline-block;
+        animation: scroll-left 10s linear infinite;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+      }
+      
+      /* Marquee animation */
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }      

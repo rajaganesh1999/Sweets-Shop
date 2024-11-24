@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickle Jar - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="https://th.bing.com/th/id/OIG1.Y3KINKgjWsD76hFHcNdL?pid=ImgGn" alt="Pickle Jar Logo" width="40" height="40" class="d-inline-block align-top">
+        Sweets-Shop
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html">SHOP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html">ADMIN</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-outline-primary me-2">SIGN IN</button>
+          <a href="#" class="position-relative me-2">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">
+              0
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <section class="hero">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+          <div class="carousel-inner">
+            <!-- Carousel items will be dynamically inserted here -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      
+
+      <div class="cards3">
+        <div class="marquee">
+          <div class="marquee-text">Explore our finest selections of pork meatballs, macarons,Chocolate and more!</div>
+        </div>
+        <section class="container1 my-5">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="https://img.freepik.com/premium-photo/pork-meatballs-with-tomato-sauce-oregano-leaves-spices-herbs-side-view_71985-3282.jpg?w=1060" 
+                     class="card-img-top" alt="Pork meatballs">
+                <div class="card-body text-center">
+                  <h5 class="card-title">The Real Taste of</h5>
+                  <h3 class="card-subtitle mb-2 text-success">Pork Meatballs</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="https://img.freepik.com/premium-photo/different-colors-macaroons-chocolate-eggs-ceramic-bowl-black-concrete-background-side-view-copy-space_71985-9546.jpg?w=1060" 
+                     class="card-img-top" alt="Macaroons Chocolate">
+                <div class="card-body text-center">
+                  <h5 class="card-title">The Real Taste of</h5>
+                  <h3 class="card-subtitle mb-2 text-warning">Macaroons Chocolate</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="https://img.freepik.com/free-photo/front-view-delicious-french-macarons-with-candies-inside-tray-dark-space_140725-97290.jpg?t=st=1732187675~exp=1732191275~hmac=d0c88347e9548caa49a9020634934e57abdb18d85631bb927937afa6b05cc55e&w=1060" 
+                     class="card-img-top" alt="Macarons Candies">
+                <div class="card-body text-center">
+                  <h5 class="card-title">The Real Taste of</h5>
+                  <h3 class="card-subtitle mb-2 text-danger">Macarons Candies</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+
+    <section class="live-products container my-5">
+      <h2 class="text-center mb-4">Live Products</h2>
+      <div class="row" id="liveProducts">
+        <!-- Live products will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <section class="product-categories container my-5">
+      <h2 class="text-center mb-4">Our Products</h2>
+      <ul class="nav nav-tabs justify-content-center mb-4" id="productTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All Products</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="non-veg-tab" data-bs-toggle="tab" data-bs-target="#non-veg" type="button" role="tab" aria-controls="non-veg" aria-selected="false">SmartSweets candy</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="veg-tab" data-bs-toggle="tab" data-bs-target="#veg" type="button" role="tab" aria-controls="veg" aria-selected="false">sweets</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="powders-tab" data-bs-toggle="tab" data-bs-target="#powders" type="button" role="tab" aria-controls="powders" aria-selected="false">Chocolates</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="fryums-tab" data-bs-toggle="tab" data-bs-target="#fryums" type="button" role="tab" aria-controls="fryums" aria-selected="false">Mix-Sweets</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="productTabContent">
+        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+          <div class="row" id="allProducts">
+            <!-- All products will be dynamically inserted here -->
+          </div>
+        </div>
+        <div class="tab-pane fade" id="non-veg" role="tabpanel" aria-labelledby="SmartSweets candy">
+          <div class="row" id="SmartSweets candy">
+            <!-- Non-veg products will be dynamically inserted here -->
+          </div>
+        </div>
+        <div class="tab-pane fade" id="veg" role="tabpanel" aria-labelledby="sweets">
+          <div class="row" id="sweets">
+            <!-- Veg products will be dynamically inserted here -->
+          </div>
+        </div>
+        <div class="tab-pane fade" id="powders" role="tabpanel" aria-labelledby="Chocolates">
+          <div class="row" id="Chocolates">
+            <!-- Powder products will be dynamically inserted here -->
+          </div>
+        </div>
+        <div class="tab-pane fade" id="fryums" role="tabpanel" aria-labelledby="MixSweets">
+          <div class="row" id="MixSweets">
+            <!-- Fryum products will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-primary" id="viewMoreBtn">VIEW MORE</button>
+      </div>
+    </section>
+  </main>
+  <div class="card2">
+  <section class="features container my-5">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-truck fa-2x me-3"></i>
+                <div>
+                    <h5 class="mb-0">Free Shipping</h5>
+                    <p class="mb-0">On order over ₹1000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-undo fa-2x me-3"></i>
+                <div>
+                    <h5 class="mb-0">Money Return</h5>
+                    <p class="mb-0">Back guarantee under 7 days</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-percent fa-2x me-3"></i>
+                <div>
+                    <h5 class="mb-0">Member Discount</h5>
+                    <p class="mb-0">On every order over ₹1000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-headset fa-2x me-3"></i>
+                <div>
+                    <h5 class="mb-0">Online Support</h5>
+                    <p class="mb-0">24/7 customer support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+</main>
+<footer class="bg-dark mt-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Contact Us</h5>
+        <p>Email: info@SweetsShop.in</p>
+        <p>Phone: +91934255251900</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Follow Us</h5>
+        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center py-3">
+    <p class="mb-0">&copy; 2024 Sweets-Shop. All rights reserved.</p>
+  </div>
+  <button id="backToTop" class="btn btn-primary position-fixed" 
+          style="bottom: 20px; right: 20px; display: none; z-index: 1000;">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</footer>
+
+<script>
+  // Show the "Back to Top" button when scrolling down
+  const backToTopButton = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  // Scroll back to top smoothly
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Bundle JS (includes Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
